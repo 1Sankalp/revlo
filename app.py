@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
 import os
-import constants
-import sys
 from langchain.document_loaders import DirectoryLoader
 from langchain.indexes import VectorstoreIndexCreator
 
+from decouple import config
 
-os.environ["OPENAI_API_KEY"] = constants.APIKEY 
+
+API_KEY = config('OPENAI_API_KEY')
+
 
 app = Flask(__name__)
 loader = DirectoryLoader(".", glob="*.txt")
