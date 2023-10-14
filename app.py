@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv('/.env')
 from flask import Flask, render_template, request
 import os
 from langchain.document_loaders import DirectoryLoader
