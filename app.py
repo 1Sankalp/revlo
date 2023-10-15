@@ -1,15 +1,13 @@
-from dotenv import load_dotenv
-load_dotenv('/.env')
 from flask import Flask, render_template, request
 import os
+import sys
 from langchain.document_loaders import DirectoryLoader
 from langchain.indexes import VectorstoreIndexCreator
 
-from decouple import config
+from dotenv import load_dotenv
+load_dotenv()
 
-
-API_KEY = config('OPENAI_API_KEY')
-
+key = os.environ.get('OPENAI_API_KEY')
 
 app = Flask(__name__)
 loader = DirectoryLoader(".", glob="*.txt")
