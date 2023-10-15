@@ -30,12 +30,6 @@
     ],
     "env": {
       "MY_SECRET": "@my-secret"
-    },
-    "ignore": [
-      ".env",
-      "venv",
-      "__pycache__",
-      ".gitignore"
-    ]
+    }
   }
   
